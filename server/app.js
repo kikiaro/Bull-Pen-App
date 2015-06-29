@@ -24,6 +24,7 @@ var socketio = require('socket.io')(server, {
   serveClient: (config.env === 'production') ? false : true,
   path: '/socket.io-client'
 });
+// compare this to the json configuration in the socket.io intro script
 require('./config/socketio')(socketio);
 require('./config/express')(app);
 require('./routes')(app);

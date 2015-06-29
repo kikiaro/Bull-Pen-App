@@ -36,6 +36,10 @@ server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
+app.get('/', function (req, res) {
+  res.sendfile('client' + '/index.html');
+});
+
 // Expose app
 exports = module.exports = app;
 

@@ -3,6 +3,7 @@
 
 angular.module('project3App')
   .factory('socket', function(socketFactory) {
+    // this means he can inject socket anywhere he needs to
 
     // socket.io now auto-configures its connection when we ommit a connection url
     var ioSocket = io('', {
@@ -29,6 +30,7 @@ angular.module('project3App')
        * @param {Function} cb
        */
       syncUpdates: function (modelName, array, cb) {
+        // array is just the array of things to be updated
         cb = cb || angular.noop;
 
         /**

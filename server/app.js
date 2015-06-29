@@ -20,10 +20,12 @@ if(config.seedDB) { require('./config/seed'); }
 // Setup server
 var app = express();
 var server = require('http').createServer(app);
+// IS THIS PATH CORRECT???
 var socketio = require('socket.io')(server, {
   serveClient: (config.env === 'production') ? false : true,
   path: '/socket.io-client'
 });
+// var io = require('socekt.io')(server);
 // compare this to the json configuration in the socket.io intro script
 require('./config/socketio')(socketio);
 require('./config/express')(app);
@@ -36,3 +38,10 @@ server.listen(config.port, config.ip, function () {
 
 // Expose app
 exports = module.exports = app;
+
+socketio.on('connection', function (socket){
+  socket.emit('news', {hello: 'world'});
+  socket.on('my other event', function(data){
+    console.log(data);
+  });
+});

@@ -78,5 +78,17 @@
           <script src="components/socket/socket.service.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
+
+<script>
+
+  var socket = io.connect('http://localhost');
+  socket.on('connection', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+
+</script>
+
 </body>
+
 </html>

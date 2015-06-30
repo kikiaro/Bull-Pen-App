@@ -20,11 +20,167 @@
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
+      <title>ClockJS</title>
+  <style>
+  canvas {
+    border:1px solid black;
+    margin:auto;
+    width: 100vw;
+  }
+  #circle_coordinates {
+    width: 100vw;
+    height:20vh;
+    overflow:auto;
+    font-family:hobo std;
+  }
+  </style>
   </head>
   <body ng-app="project3App">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+
+<canvas id="canvas" width='450' height='450'></canvas>
+<h1 id="sorry"></h1>
+<p id="circle_coordinates"></p>
+
+
+<script>
+// JavaScript syntax:  context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+// Parameter Values
+// Parameter Description Play it
+// x The x-coordinate of the center of the circle
+// y The y-coordinate of the center of the circle
+// r The radius of the circle
+// sAngle  The starting angle, in radians (0 is at the 3 o'clock position of the arc's circle)
+// eAngle  The ending angle, in radians
+// counterclockwise  Optional.
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var width = canvas.width;
+var height = canvas.height;
+var center = width/2;
+var radius = width/2.5
+
+function drawClock() {
+  drawFace(radius);
+  drawNumbers(radius);
+}
+
+function drawFace(r) {
+    ctx.arc(center, center, r, 0, 2*Math.PI);
+    ctx.strokeStyle="turquoise";
+    ctx.stroke();
+    ctx.fillStyle="black";
+    ctx.fill();
+    ctx.beginPath();
+  // ctx.arc(center, center, r*0.1, 0, 2*Math.PI);
+  //   CanvasGradient ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);
+  // Parameters
+  // x0
+  // The x axis of the coordinate of the start circle.
+  // y0
+  // The y axis of the coordinate of the start circle.
+  // r0
+  // The radius of the start circle.
+  // x1
+  // The x axis of the coordinate of the end circle.
+  // y1
+  // The y axis of the coordinate of the end circle.
+  // r1
+  // The radius of the end circle.
+    var gradient = ctx.createRadialGradient(center, center, center/10, center, center, 0);
+    gradient.addColorStop(0, "black");
+    gradient.addColorStop(1, "white");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+}
+function drawNumbers(r){
+    // for(var num = 1; num < 13; num++){
+    //   var gradient = ctx.createLinearGradient(0, 0, 1, 0);
+    //   gradient.addColorStop("0", "white");
+    //   // Fill with gradient
+    //   ctx.fillStyle = gradient;
+    //   ctx.fillText("Half Smile", center +50, center);
+    // }
+    // ctx.beginPath();
+    // ctx.moveTo(center, center);
+    // ctx.lineTo(r, r);
+    // ctx.strokeStyle="white";
+    // ctx.stroke();
+
+}
+drawClock();
+var slots = [];
+for(var i = 0; i < 12; i++){
+  xy = [];
+  for(var j = 0; j < 1; j++){
+    xy.push((center + radius * Math.cos(2 * Math.PI * i / 12)));
+    xy.push((center + radius * Math.sin(2 * Math.PI * i / 12)));
+  }
+  slots.push(xy);
+}
+
+console.log(slots);
+
+// draw a line at each slot position
+  ctx.beginPath();
+for(var i = 3; i <= 14; i++){
+  j = i;
+  // if( i === 13 ){ j = 1; };
+  // if( i === 14 ){ j = 2; };
+// CanvasGradient ctx.createLinearGradient(x0, y0, x1, y1);
+// Parameters
+// x0
+// The x axis of the coordinate of the start point.
+// y0
+// The y axis of the coordinate of the start point.
+// x1
+// The x axis of the coordinate of the end point.
+// y1
+// The y axis of the coordinate of the end point.
+  var gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+  gradient.addColorStop("0", "white");
+  ctx.font="20px times";
+  ctx.fillStyle = gradient;
+
+
+  // 1
+  if( j != 13 && j != 14 ){
+    ctx.fillText(j, slots[j-3][0], slots[j-3][1]);
+  }
+
+  if( j === 13 ){
+    ctx.fillText(j-12, slots[j-3][0], slots[j-3][1]);
+  }
+
+  // 2
+
+  if( j === 14 ){
+    ctx.fillText(j-12, slots[j-3][0], slots[j-3][1]);
+  }
+  // ctx.lineTo(center, center);
+  // ctx.strokeStyle="white";
+  // ctx.stroke();
+
+}
+
+// DOM fun VVVV
+var circle_coordinates = document.getElementById("circle_coordinates");
+circle_coordinates.innerHTML = slots;
+
+
+function drawHands(){
+  var now = new Date();
+  var hour = now.getHours();
+  var minute = now.getMinutes();
+  var seconds = now.getSeconds();
+}
+</script>
+<!-- Josefin Slab via: Google Fonts -->
+
 
     <!-- Add your site or application content here -->
     <div ui-view=""></div>

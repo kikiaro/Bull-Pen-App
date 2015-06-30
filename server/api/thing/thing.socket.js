@@ -23,7 +23,7 @@ setInterval(function(){
   console.log('hello ' + counter);
   onSave(socket, {
                   _id: counter % 5,
-                  name: "Apple " + counter,
+                  name: "Apple" + counter,
                   info: "something",
                   active: true
                 });

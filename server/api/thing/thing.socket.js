@@ -23,12 +23,28 @@ setInterval(function(){
   console.log('hello ' + counter);
   onSave(socket, {
                   _id: counter % 5,
-                  name: "Apple" + counter,
+                  name: "Apple" + counter + stream,
                   info: "something",
                   active: true
                 });
 
 }, 500);
+
+var Stream = require('user-stream');
+var stream = new Stream({
+    consumer_key: 'DSeQTW6yqDyhfcKurO8cum1Ag',
+    consumer_secret: 'DzrJxwCKurEdENCiTL7r8K7fEbFP1rusbVX5ogtisANlL0kIqG',
+    access_token_key: '70510733-7dyMhMyDVi4EZgiahS4mNZa9BRHV4yvyShWMb8OFo',
+    access_token_secret: 'z8Z0s6xxze9TLaIb2Ufu3ht3UOy7ECM50tQsFuKiPwGJh'
+});
+
+//create stream
+stream.stream();
+
+//listen stream data
+stream.on('data', function(json) {
+  console.log(json);
+});
 
 }
 

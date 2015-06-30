@@ -9,8 +9,8 @@ module.exports = {
   DOMAIN:           'http://localhost:9000',
   SESSION_SECRET:   'project3-secret',
 
-  TWITTER_ID:       'app-id',
-  TWITTER_SECRET:   'secret',
+  TWITTER_ID:       'GDFpoSyZPgobu1ohoCKN46yf3',
+  TWITTER_SECRET:   'MVLXZ4YKNPmq2BvQJLQ6ItoMHKqpoiqHdotrL9ff23BGeIzXKE',
 
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''

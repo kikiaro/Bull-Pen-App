@@ -20,10 +20,10 @@ var counter = 0;
 
 setInterval(function(){
   counter += 1;
-  console.log('hello ' + counter);
+  console.log(stream);
   onSave(socket, {
                   _id: counter % 5,
-                  name: "Apple" + counter + stream,
+                  name: stream,
                   info: "something",
                   active: true
                 });

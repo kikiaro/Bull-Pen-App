@@ -10,7 +10,7 @@ angular.module('project3App', [
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
-      .otherwise('/');
+      .otherwise('/teams');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');

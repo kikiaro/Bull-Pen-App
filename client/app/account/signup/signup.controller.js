@@ -15,8 +15,8 @@ angular.module('project3App')
           password: $scope.user.password
         })
         .then( function() {
-          // Account created, redirect to home
-          $location.path('/');
+          // Account created, redirect to teams
+          $location.path('/teams');
         })
         .catch( function(err) {
           err = err.data;

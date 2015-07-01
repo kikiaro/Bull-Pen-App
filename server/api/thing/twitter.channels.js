@@ -11,6 +11,7 @@ var connected = false;
 var channelsInput = {
     "colors": "blue,white,yellow,green,orange",
     "fruits": ['kiwi', 'orange,apple', 'lemon', 'coconut'],
+    //Actual list, with above as test example
     "angels": "angels",
     "astros": "astros",
     "athletics": "athletics,greencollar",
@@ -37,9 +38,9 @@ var channelsInput = {
     "reds": "reds,LetsGoReds",
     "redsox": "redsox",
     "rockies": "rockies",
-    "royals": "royals,kcroyals,ForeverRoyal",
+    "royals": "royals,kcroyals,foreverroyal",
     "tigers": "tigers",
-    "twins": "twins, MNTwins",
+    "twins": "twins, mntwins",
     "whitesox": "whitesox",
     "yankees": "yankees"
 };

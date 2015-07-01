@@ -5,7 +5,13 @@ angular.module('project3App')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    },
+    ,
+    {
+      'title': 'Teams',
+      'link': '/teams'
+    }
+    ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

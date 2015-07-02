@@ -4,7 +4,7 @@
 
 'use strict';
 
-var Favorite = require('./favorite.model');
+var Favorite = require('./favoriteteam.model');
 
 exports.register = function(socket) {
   Favorite.schema.post('save', function (doc) {

@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('project3App')
-  .service('favoritesService', function () {
+  .service('favoriteService', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
   var that = this;
 
-  that.favorites = [];
+  that.favorite = [];
 
   function findTeamById(teams, id) {
     return _.find(teams, function(item) {
@@ -15,22 +15,22 @@ angular.module('project3App')
   }
 
   that.addTeam = function(team) {
-    var found = findTeamById(that.favorites, team._id);
+    var found = findTeamById(that.favorite, team._id);
     if (found) {
       found.qty += team.qty;
     }
     else {
-      that.favorites.push(angular.copy(team));
+      that.favorite.push(angular.copy(team));
     }
   };
 
   that.removeTeam = function(team) {
-    var index = that.favorites.indexOf(team);
-    that.favorites.splice(index, 1);
+    var index = that.favorite.indexOf(team);
+    that.favorite.splice(index, 1);
   };
 
-  that.clearFavorites = function() {
-    that.favorites.length = 0;
+  that.clearFavorite = function() {
+    that.favorite.length = 0;
   };
 });
 

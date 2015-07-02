@@ -7,6 +7,7 @@
 
 var Team = require('../api/team/team.model');
 var User = require('../api/user/user.model');
+var Thing = require('../api/thing/thing.model');
 
 User.find({}).remove(function() {
   User.create({
@@ -215,10 +216,10 @@ Team.find({}).remove(function() {
       imageFile: 'New_York_Yankees.jpg'
     },
     function() {
-      Item.find(function (err, items) {
+      Team.find(function (err, teams) {
         if (err) { console.log(err); }
         else {
-          console.log('Finished populating ' + items.length + ' items.');
+          console.log('Finished populating ' + teams.length + ' teams.');
         }
       });
     }

@@ -23,7 +23,7 @@ exports.setup = function (User, config) {
       });
     }
   ));
-};
+
   passport.use(new TwitterStrategy({
           consumerKey: 'GDFpoSyZPgobu1ohoCKN46yf3',
           consumerSecret: 'MVLXZ4YKNPmq2BvQJLQ6ItoMHKqpoiqHdotrL9ff23BGeIzXKE',
@@ -34,6 +34,6 @@ exports.setup = function (User, config) {
             done(err, user);
           });
         }
-      ));
- 
-  
+  ));
+};
+

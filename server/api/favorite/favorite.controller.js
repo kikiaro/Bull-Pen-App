@@ -35,24 +35,24 @@ exports.get = function(req, res) {
 exports.addItem = function(req, res) {
   console.log('addTeam, url = ' + req.url);
   var userId = req.params.userid.trim();
-  var itemId = req.params.teamid.trim();
+  var teamId = req.params.teamid.trim();
   console.log('userId: ' + userId + ', teamId: ' + teamId);
 
-  Item.findById(teamId, function(err, team) {
+  Team.findById(teamId, function(err, team) {
     if (err) { return handleError(res, err); }
     if (!team) { return res.send(404); }
     User.findById(userId, function(err, user) {
       if (err) { return handleError(res, err); }
       if (!user) { return res.send(404); }
 
-      // Check if item is already in favorite
+      // Check if team is already in favorite
       var found = findTeamInFavorite(user, team._id);
       if (found) {
-        console.log('Found team ' + team.name + ' in Bull Pin');
+        console.log('Found team ' + team.name + ' in Bull Pen');
         found.qty = found.qty + 1;
       }
       else {
-        console.log('Adding team to favorites: ' + team.name);
+        console.log('Adding Team to Bull Pen: ' + team.name);
         user.favorite.push( new FavoriteTeam( { team: team, qty: 1 } ) );
       }
       user.save(function() {
@@ -79,7 +79,7 @@ exports.removeTeam = function(req, res) {
     // Check if team is already in favorite
     var found = findTeamInFavorite(user, favoriteTeamId);
     if (found) {
-      console.log('Removing team from Bull Pin');
+      console.log('Removing Team from Bull Pen');
       user.favorite.pull(found._id);               // pull is a feature of MongooseArray!
     }
     else {
@@ -104,7 +104,7 @@ exports.removeAllTeams = function(req, res) {
     if (err) { return handleError(res, err); }
     if (!user) { return res.send(404); }
 
-    user.favorite = new Array();
+    user.favorite = [];
     user.save(function() {
       user.populate('favorite.team', function(err, user) {
         return res.send(204, user.favorite);

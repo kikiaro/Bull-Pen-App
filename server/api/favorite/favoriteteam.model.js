@@ -3,7 +3,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var FavoriteSchema = new Schema({
+var FavoriteTeamSchema = new Schema({
   team: {
   type : Schema.Types.ObjectId,
     ref: 'Team'

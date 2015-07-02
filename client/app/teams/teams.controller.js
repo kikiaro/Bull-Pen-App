@@ -3,26 +3,49 @@
 angular.module('project3App')
   .controller('TeamsCtrl', function($state, teamService, favoriteService) {
 
-    this.searchText = '';
-          teamService.getTeams().then(function(json) {
-            that.inventory = json.data;
-      });
+   var that = this;
 
-    this.favorite = favoritesService.favorite;
-    this.addTeam = function(team) {
-      favoriteService.addTeam(team);
-    };
+  that.searchText = '';
+  that.total = 0;
 
-    this.removeTeam = function(team) {
-      favoriteService.removeTeam(team);
-    };
+  that.getInventory = function() {
+    teamService.getTeams().then(function(json) {
+      that.inventory = json.data;
+    });
+  };
 
-    this.clearFavorite = function() {
-      return favoriteService.clearFavorite();
-    };
-
-    this.goTeam = function (team) {
-      console.log('goTeam: ' + team._id);
-      $state.go( 'teamDetail', { teamId : team._id } );
-    };
+  favoriteService.getFavorite().then(function(json) {
+    that.favorite = json.data;
   });
+
+  that.getInventory();
+
+  that.addTeam = function(team) {
+    favoriteService.addTeam(team).then(function(json) {
+      that.favorite = json.data;
+    }, function(err) {
+      console.log('ERROR: addTeam post: ' + JSON.stringify(err));
+    });
+  };
+
+  that.removeTeam = function(team) {
+    favoriteService.removeTeam(team).then(function(json) {
+      that.favorite = json.data;
+    }, function(err) {
+      console.log('ERROR: removeTeam delete: ' + JSON.stringify(err));
+    });
+  };
+
+  that.clearFavorite = function() {
+    return favoriteService.clearFavorite().then(function(json) {
+      that.favorite = json.data;
+    }, function(err) {
+      console.log('clearFavorite delete ERROR: ' + JSON.stringify(err));
+    });
+  };
+
+  that.goTeam = function (team) {
+    $state.go( 'teamDetail', { teamId : team._id } );
+  };
+
+});

@@ -1,38 +1,27 @@
 'use strict';
 
 angular.module('project3App')
-  .service('favoriteService', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  .service('favoriteService', function ($http, Auth) {
 
-  var that = this;
+   var that = this;
 
-  that.favorite = [];
+    that.getFavorite = function() {
+      var userId = Auth.getCurrentUser()._id;
+      return $http.get('/api/users/' + userId + '/favorite/');
+    };
 
-  function findTeamById(teams, id) {
-    return _.find(teams, function(item) {
-      return team._id === id;
-    });
-  }
+    that.addTeam = function(team) {
+      var userId = Auth.getCurrentUser()._id;
+      return $http.post('/api/users/' + userId + '/favorite/' + team._id);
+    };
 
-  that.addTeam = function(team) {
-    var found = findTeamById(that.favorite, team._id);
-    if (found) {
-      found.qty += team.qty;
-    }
-    else {
-      that.favorite.push(angular.copy(team));
-    }
-  };
+    that.removeTeam = function(favoriteTeam) {
+      var userId = Auth.getCurrentUser()._id;
+      return $http.delete('/api/users/' + userId + '/favorite/' + favoriteTeam._id);
+    };
 
-  that.removeTeam = function(team) {
-    var index = that.favorite.indexOf(team);
-    that.favorite.splice(index, 1);
-  };
-
-  that.clearFavorite = function() {
-    that.favorite.length = 0;
-  };
-});
-
-
+    that.clearFavorite = function() {
+      var userId = Auth.getCurrentUser()._id;
+      return $http.delete('/api/users/' + userId + '/favorite/');
+    };
   });

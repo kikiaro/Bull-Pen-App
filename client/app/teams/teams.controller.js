@@ -4,11 +4,13 @@ angular.module('project3App')
   .controller('TeamsCtrl', function($state, teamService, favoriteService) {
 
     this.searchText = '';
-    this.inventory = teamService.inventory;
-    this.favorite = favoritesService.favorite;
+          teamService.getTeams().then(function(json) {
+            that.inventory = json.data;
+      });
 
-    this.addItem = function(team) {
-      favoriteService.addItem(team);
+    this.favorite = favoritesService.favorite;
+    this.addTeam = function(team) {
+      favoriteService.addTeam(team);
     };
 
     this.removeTeam = function(team) {

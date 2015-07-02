@@ -3,6 +3,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
+var FavoriteTeam = require('../favorite/favoriteteam.model');
+
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
@@ -16,7 +18,8 @@ var UserSchema = new Schema({
   provider: String,
   salt: String,
   twitter: {},
-  github: {}
+  github: {},
+  favorite: [FavoriteTeam.schema]
 });
 
 /**

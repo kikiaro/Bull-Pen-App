@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('project3App')
-  .controller('TeamsCtrl', function($state, teamService) {
+  .controller('TeamsCtrl', function($state, teamService, favoriteService) {
 
    var that = this;
 
@@ -13,13 +13,10 @@ angular.module('project3App')
       that.inventory = json.data;
     });
   };
-
-  
-
   that.getInventory();
 
   that.addTeam = function(team) {
-    favoriteService.addTeam(team).then(function(json) {
+    favoriteService.addTeam(team).then(function (json) {
       that.favorite = json.data;
     }, function(err) {
       console.log('ERROR: addTeam post: ' + JSON.stringify(err));

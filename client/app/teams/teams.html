@@ -1,6 +1,15 @@
-
-
-
+<div class="col-sm-3 col-md-2 sidebar" style="position:fixed; right:0">
+  <section class="cart text-center">
+  <h2>Your Cart:</h2>
+  <ul>
+    <li class="cart animate-cart" ng-repeat="team in ctrl.favorite">
+      <button class="btn btn-danger btn-xs" ng-click="ctrl.removeTeam(team)">Remove Item</button>
+    </li>
+  </ul>
+  <br>
+  <button class="btn btn-danger" ng-click="ctrl.clearFavorite()">Clear Cart</button>
+</section>
+        </div>
 
 <section class="container teams">
   <div class="list-group">
@@ -28,5 +37,7 @@
     </div>
   </div>
 </section>
+
+
 
 

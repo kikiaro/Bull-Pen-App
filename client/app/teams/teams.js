@@ -6,6 +6,6 @@ angular.module('project3App')
       .state('teams', {
         url: '/teams',
         templateUrl: 'app/teams/teams.html',
-        controller: 'TeamsCtrl'
+        controller: 'TeamsCtrl as ctrl'
       });
   });

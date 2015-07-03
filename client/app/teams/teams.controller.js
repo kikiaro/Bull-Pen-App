@@ -13,15 +13,10 @@ angular.module('project3App')
       that.inventory = json.data;
     });
   };
-
-  favoriteService.getFavorite().then(function(json) {
-    that.favorite = json.data;
-  });
-
   that.getInventory();
 
   that.addTeam = function(team) {
-    favoriteService.addTeam(team).then(function(json) {
+    favoriteService.addTeam(team).then(function (json) {
       that.favorite = json.data;
     }, function(err) {
       console.log('ERROR: addTeam post: ' + JSON.stringify(err));

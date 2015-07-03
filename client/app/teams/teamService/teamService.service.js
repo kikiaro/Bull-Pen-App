@@ -18,7 +18,7 @@ angular.module('project3App')
         return $http.get('/api/teams/' + id);
       };
 
-      that.getItems = function() {
+      that.getTeams = function() {
         return $http.get('/api/teams');
       };
 

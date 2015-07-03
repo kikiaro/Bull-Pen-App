@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: favoriteService', function () {
+describe('Service: favoriteService', function ($http) {
 
   // load the service's module
   beforeEach(module('project3App'));

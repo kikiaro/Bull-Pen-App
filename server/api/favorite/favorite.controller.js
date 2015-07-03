@@ -46,9 +46,9 @@ exports.addTeam = function(req, res) {
       if (!user) { return res.send(404); }
 
       // Check if item is already in cart
-      var found = findTeamInFavorite(user, favoriteTeamId);
+      var found = findTeamInFavorite(user, team._id);
       if (found) {
-        console.log('Found team ' + team.name + ' in cart, therefore incrementing qty');
+        console.log('Found team ' + team.name + ' in favorite, therefore incrementing qty');
         found.qty = found.qty + 1;
       }
       else {
@@ -77,7 +77,7 @@ exports.removeTeam = function(req, res) {
     if (!user) { return res.send(404); }
 
     // Check if item is already in cart
-    var found = findTeamInFavorite(user, favoriteteam);
+    var found = findTeamInFavorite(user, favoriteTeamId);
     if (found) {
       console.log('Removing team from favorite');
       user.favorite.pull(found._id);               // pull is a feature of MongooseArray!

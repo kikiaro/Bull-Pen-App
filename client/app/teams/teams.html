@@ -1,13 +1,13 @@
 <div class="col-sm-3 col-md-2 sidebar" style="position:fixed; right:0">
   <section class="cart text-center">
-  <h2>Your Cart:</h2>
+  <h2>Bull Pen:</h2>
   <ul>
     <li class="cart animate-cart" ng-repeat="team in ctrl.favorite">
-      <button class="btn btn-danger btn-xs" ng-click="ctrl.removeTeam(team)">Remove Item</button>
+      <button class="btn btn-danger btn-xs" ng-click="ctrl.removeTeam(team)">Remove Team</button>
     </li>
   </ul>
   <br>
-  <button class="btn btn-danger" ng-click="ctrl.clearFavorite()">Clear Cart</button>
+  <button class="btn btn-danger" ng-click="ctrl.clearFavorite()">Clear Bull Pen</button>
 </section>
         </div>
 
@@ -24,8 +24,8 @@
             </div>
             <div class="col-xs-7">
               <dl class="dl-horizontal">
-                <dt>Name:</dt>
-                <dd>{{ team.category }}</dd>
+                <dt>Description:</dt>
+                <dd>{{ team.description }}</dd>
               </dl>
             </div>
           </article>

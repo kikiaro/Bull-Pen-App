@@ -31,8 +31,8 @@ Team.find({}).remove(function() {
     {
       name: 'Angels',
       category: 'Baseball',
-      description: 'Los Angeles Angels of Anaheim, California.',
-      imageFile: 'Anaheim-Angels.jpg'
+      description: 'Los Angeles Angels of Anaheim, California',
+      imageFile: 'Anaheim_Angels.jpg'
     },
     {
       name: 'Astros',

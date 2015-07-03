@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('project3App')
-  .controller('TeamsCtrl', function($state, teamService, favoriteService) {
+  .controller('TeamsCtrl', function($state, teamService) {
 
    var that = this;
 

@@ -7,7 +7,6 @@
 
 var Team = require('../api/team/team.model');
 var User = require('../api/user/user.model');
-var Thing = require('../api/thing/thing.model');
 
 User.find({}).remove(function() {
   User.create({

@@ -1,10 +1,12 @@
 
 
+
+
 <section class="container teams">
   <div class="list-group">
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-inventory"
-           ng-repeat="team in baseballTeams">
+           ng-repeat="team in ctrl.inventory">
         <a ng-click="ctrl.goTeam(team)" class="list-group-team">
           <h3>{{ team.name }}</h3>
           <article class="row">

@@ -9,7 +9,7 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   // Insert routes below
-  app.use('/api/teams', require('./teams'));
+  app.use('/api/teams', require('./api/team'));
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));

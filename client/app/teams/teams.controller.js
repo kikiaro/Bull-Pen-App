@@ -14,9 +14,7 @@ angular.module('project3App')
     });
   };
 
-  favoriteService.getFavorite().then(function(json) {
-    that.favorite = json.data;
-  });
+  
 
   that.getInventory();
 

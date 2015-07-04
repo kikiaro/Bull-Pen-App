@@ -1,3 +1,15 @@
+<div class="col-sm-3 col-md-2 sidebar" style="position:fixed; right:0">
+  <section class="favorite">
+    <h2>{{getCurrentUser().name}} Bull Pen:</h2>
+      <ul>
+        <li class="favorite animate-favorite" ng-repeat="team in ctrl.favorite">
+    <button class="btn btn-danger btn-xs" ng-click="ctrl.removeTeam(team)">Remove Item</button>
+        </li>
+      </ul>
+      <br>
+    <button class="btn btn-danger" ng-click="ctrl.clearFavorite()">Clear Cart</button>
+  </section>
+</div>
 <section class="container-fluid item">
   <div class="row">
     <h2 class="text-center">{{ ctrl.team.name }}</h2>

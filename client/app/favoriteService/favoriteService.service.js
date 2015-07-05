@@ -15,6 +15,11 @@ angular.module('project3App')
     return $http.post('/api/users/' + userId + '/favorite/' + team._id);
   };
 
+  that.saveTeam = function(team) {
+    var userId = Auth.getCurrentUser()._id;
+    return $http.put('/api/users/' + userId + '/favorite/' + favoriteTeam._id);
+  };
+
   that.removeTeam = function(favoriteTeam) {
     var userId = Auth.getCurrentUser()._id;
     return $http.delete('/api/users/' + userId + '/favorite/' + favoriteTeam._id);

@@ -1,30 +1,183 @@
-.thing-form {
-    margin: 20px 0;
+
+@import url(http://fonts.googleapis.com/css?family=Jura);
+
+$bullpenred: #DE1B1B;
+$white: #FFF;
+
+/* Main Page */
+
+body {
+   font-family: 'Jura', sans-serif;
+    line-height: 30px;
+    font-size: 14px;
 }
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.pad-bottom {
+    padding-bottom: 70px;
 }
 
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+.text-right {
+    text-align:right;
 }
 
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+.head-line {
+    margin-bottom: 20px;
+    line-height: 30px;
+    font-size: 25px;
+    color: $bullpenred;
+}
+
+header {
+    background-color:$bullpenred;
+    color:$white;
+    padding-top: 20px;
+    padding-bottom: 12px;
+}
+
+#home {
+    background: url(../images/home.jpg) no-repeat center center;
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+
+    #home .overlay {
+        padding-top: 120px;
+        background-color: rgba(36, 36, 36, 0.6);
+        min-height: 600px;
+        padding-bottom: 40px;
+    }
+     #home h1 {
+        margin-bottom: 20px;
+        line-height: 80px;
+        font-size: 90px;
+        color: $bullpenred;
+        text-transform:uppercase;
+    }
+    #home h4 {
+          margin-bottom: 30px;
+          line-height: 40px;
+          font-size: 20px;
+          color: #D0D0D0;
+    }
+
+.btn-custom {
+        min-height:60px;
+        border-radius:30px;
+        -webkit-border-radius:30px;
+        -moz-border-radius:30px;
+        padding:15px 40px 15px 40px;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        margin:25px 5px 5px 0px;
+}
+
+.btn-one {
+        background-color: transparent;
+        border:5px solid $bullpenred;
+        color:$white;
+
+}
+ .btn-one:hover {
+        background-color:$bullpenred;
+        color:$white;
+        text-decoration:none;
+    }
+
+ .btn-two {
+        background-color: $bullpenred;
+        border:5px solid $bullpenred;
+        color:$white;
+
+}
+ .btn-two:hover {
+        background-color:transparent;
+        color:$white;
+        text-decoration:none;
+    }
+.btn-three {
+        background-color:transparent;
+        border:5px solid $bullpenred;
+        color:#000;
+
+}
+ .btn-three:hover {
+         background-color:$bullpenred;
+         color:$white;
+         text-decoration:none;
+}
+
+
+#testimonials {
+        background: url(../images/background.jpg) no-repeat center center;
+        padding: 0;
+        -webkit-background-size: cover;
+        background-size: cover;
+        -moz-background-size: cover;
+}
+
+.testimonial-cover {
+        background-color:#222;
+        padding:100px 50px 100px 50px;
+        color:$white;
+}
+.testimonial-section {
+        width: 100%;
+        height: auto;
+        padding: 35px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        position: relative;
+        border: 5px solid $bullpenred;
+        font-size: 20px;
+        color: $white;
+        line-height: 35px;
+}
+.testimonial-section:after {
+        top: 100%;
+        left: 10%;
+        border: solid transparent;
+        content: " ";
+        position: absolute;
+        border-top-color:$bullpenred;
+        border-width: 15px;
+        margin-left: -15px;
+    }
+
+.testimonial-section-name {
+        margin-top: 30px;
+        margin-left: 30px;
+        text-align:left;
+        color:$bullpenred;
+        font-size:16px;
+}
+    .testimonial-section-name img {
+        width:100px;
+        border: 5px solid $white;
+}
+.carousel-indicators-set {
+        position:static;
+        margin-left:0px;
+        width:100%;
+        color: $bullpenred;
+}
+footer {
+        padding:5px;
+        background-color:$bullpenred;
+        color:$white;
+}
+footer a,footer a:hover,footer a:focus {
+        color:$white;
+        text-decoration:none;
+        margin-right:10px;
+        margin-left:10px;
 }

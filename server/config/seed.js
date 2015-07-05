@@ -64,7 +64,7 @@ Team.find({}).remove(function() {
       name: 'Braves',
       category: 'Baseball',
       description: 'Atlanta Braves of Atlanta, Georgia',
-      imageFile: String,
+      imageFile: 'Atlanta_Braves.jpg',
       twitter: 'https://twitter.com/search?q=Braves',
       dataId: '616768781172523008'
     },

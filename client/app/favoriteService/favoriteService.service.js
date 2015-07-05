@@ -25,9 +25,9 @@ angular.module('project3App')
     var userId = Auth.getCurrentUser()._id;
     return $http.delete('/api/users/' + userId + '/favorite/');
   };
-});
 
 that.saveTeam = function(team) {
     var userId = Auth.getCurrentUser()._id;
     return $http.put('/api/users/' + userId + '/favorite/' + favoriteTeam._id);
   };
+});

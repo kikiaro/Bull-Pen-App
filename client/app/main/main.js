@@ -10,24 +10,9 @@ angular.module('project3App')
       });
   });
 
-//Custom JS for Splash Page //
+//Custom JS for Splash Page
 
 $(document).ready(function () {
-
-   $("#postcontent").submit(function (e) {
-        e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "subscribe.php",
-            data: $("#postcontent").serialize(),
-             success: function (response) {
-        $('[name="email"]').val('');
-               // alert(response); // For response
-         alert('Thanks for  subscribing Us');
-            }
-        });
-        e.preventDefault();
-    });
 
     // Scrolling
     $('.scroll-me a').bind('click', function (event) { //just pass scroll-me class and start scrolling

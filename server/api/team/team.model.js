@@ -7,7 +7,9 @@ var TeamSchema = new Schema({
   name: String,
   category: String,
   description: String,
-  imageFile: String
+  imageFile: String,
+  twitter: String,
+  dataId: String
 });
 
 module.exports = mongoose.model('Team', TeamSchema);

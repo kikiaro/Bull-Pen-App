@@ -29,18 +29,13 @@ $animation-duration: 0.25s;
 /* =========================== */
 /* Twitter Bootstrap Overrides */
 /* =========================== */
-.jumbotron {
-  text-align: center;
-  padding: 2px 0;
-  margin-bottom: 0;
-}
 
 .list-group-teams {
   border: none;
 }
 
 .dl-horizontal dt {
-    text-align: left;
+    text-align: center;
     /*margin-bottom: 1em;*/
     /*width: auto;*/
     padding-right: 1em;
@@ -65,7 +60,7 @@ $animation-duration: 0.25s;
 }
 
 .team h3 {
-  color: blue;
+  color: $bullpenred;
 }
 
 .team {

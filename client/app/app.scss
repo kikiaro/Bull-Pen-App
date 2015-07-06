@@ -3,10 +3,14 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
+@import url(http://fonts.googleapis.com/css?family=Jura);
 
-/**
+/*
  * App-wide Styles
  */
+
+$bullpenred: #DE1B1B;
+$white: #FFF;
 
 .browsehappy {
     margin: 0.2em 0;
@@ -71,6 +75,9 @@ body {
   .btn {
     font-size: 21px;
     padding: 14px 24px;
+    border-radius:30px;
+        -webkit-border-radius:30px;
+        -moz-border-radius:30px;
   }
 }
 
@@ -88,24 +95,7 @@ body {
   .container {
     max-width: 900px;
   }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
 }
-
 
 // Component styles are injected through grunt
 // injector

@@ -1,20 +1,12 @@
+$bullpenred: #DE1B1B;
+$white: #FFF;
+
 .favorite {
   padding: 10px;
 
   ul {
     list-style-type: none;
   }
-  
-}
-
-.on-sale {
-  color: blue;
-}
-
-.qty {
-  width: 60px;
-}
-
 $animation-duration: 0.25s;
 
 .animate-inventory {
@@ -35,14 +27,24 @@ $animation-duration: 0.25s;
   }
 }
 
+}
+.btn-team {
+        color:$white;
+        min-height:20px;
+        border-radius:30px;
+        -webkit-border-radius:30px;
+        -moz-border-radius:30px;
+        padding:5px 10px 5px 10px;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        margin:25px 5px 5px 0px;
+}
+
 /* =========================== */
 /* Twitter Bootstrap Overrides */
 /* =========================== */
-.jumbotron {
-  text-align: center;
-  padding: 2px 0;
-  margin-bottom: 0;
-}
 
 .list-group-item {
   border: none;
@@ -65,7 +67,7 @@ $animation-duration: 0.25s;
 
 .teams {
   padding-left: 0;
-  padding-right: 30px;
+  padding-right: 10px;
 }
 
 .teams p {
@@ -74,7 +76,7 @@ $animation-duration: 0.25s;
 }
 
 .team h3 {
-  color: blue;
+  color: $bullpenred;
 }
 
 .team {
@@ -92,11 +94,9 @@ $animation-duration: 0.25s;
   width: 273px;
 }
 
-.team-image img {
-}
 
 .back {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .search {

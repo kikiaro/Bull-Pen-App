@@ -10,4 +10,4 @@ var FavoriteTeamSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('FavoriteItem', FavoriteTeamSchema);
+module.exports = mongoose.model('FavoriteTeam', FavoriteTeamSchema);

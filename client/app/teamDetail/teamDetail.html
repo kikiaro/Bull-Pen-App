@@ -1,3 +1,4 @@
+<!-- Bull Pen Column -->
 <div class="col-sm-3 col-md-2 favorite sidebar" style="position:fixed; right:0">
   <section>
     <ul>
@@ -6,20 +7,21 @@
     </ul>
     <h2>Bull Pen</h2>
       <ul>
-        <a ng-click="ctrl.goTeam(team)" class="list-group-team">
-          <li class="favorite animate-favorite" ng-repeat="team in ctrl.favorite">
-        {{team.team.name}}</a>
-    <button class="btn btn-danger btn-xs" ng-click="ctrl.removeTeam(team)">Remove Team</button>
-        </li>
+          <a ng-click="ctrl.goTeam(team)" class="list-group-team">
+            <li class="favorite animate-favorite" ng-repeat="team in ctrl.favorite">
+          {{team.team.name}}</a>
+      <button class="btn btn-danger btn-xs" ng-click="ctrl.removeTeam(team)">Remove Team</button>
+          </li>
       </ul>
       <br>
-    <button class="btn btn-danger" ng-click="ctrl.clearFavorite()">Clear Bull Pen</button>
-  </section>
-  <section>
+      <button class="btn btn-danger" ng-click="ctrl.clearFavorite()">Clear Bull Pen</button>
+      <br>
+<!-- Twitter -->
     <a class="twitter-timeline" href="https://twitter.com/MLB" data-widget-id="616634451611766784">Tweets by @MLB</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </section>
 </div>
+<!-- Team View -->
 <section class="container-fluid item">
   <div class="row">
     <h2 class="text-center">{{ ctrl.team.name }}</h2>
@@ -30,6 +32,9 @@
         <dd>{{ ctrl.team.category }}</dd>
         <dt>Description:</dt>
         <dd>{{ ctrl.team.description }}</dd>
+        <dd>
+        <a class="twitter-timeline" ng-href="{{ctrl.team.twitter}}" data-widget-id="{{ctrl.team.dataId}}">#{{ctrl.team.name}}</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </dd>
       </dl>
 
       <div class="back">
@@ -44,11 +49,7 @@
       <div class="row">
       <div class="dl-horizontal">
       <div class="col-md-4 col-md-offset-2">
-      <div>
-      <a class="twitter-timeline" ng-href="{{ctrl.team.twitter}}" data-widget-id="{{ctrl.team.dataId}}">#{{ctrl.team.name}}</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-
-      </div>
   </div>
   </div>
 </section>
